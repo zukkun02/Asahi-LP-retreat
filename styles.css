@@ -160,6 +160,8 @@ a:hover {
   padding: 0 var(--spacing-md);
   box-sizing: border-box;
   overflow-x: hidden;
+  overflow-y: visible;
+  touch-action: pan-y;
 }
 
 /* ========================================
@@ -171,6 +173,8 @@ a:hover {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: visible;
+  touch-action: pan-y;
 }
 
 .section-header {
@@ -348,7 +352,8 @@ a:hover {
   text-align: center;
   transition: all var(--transition-base);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .target-card::before {
@@ -453,7 +458,8 @@ img {
   box-shadow: var(--shadow-card);
   position: relative;
   transition: all var(--transition-base);
-  overflow: hidden;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .benefit-card::after {
@@ -536,6 +542,8 @@ img {
   padding: var(--spacing-lg) 0;
   position: relative;
   padding-left: var(--spacing-xl);
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .schedule-item::before {
@@ -595,7 +603,8 @@ img {
   text-align: center;
   transition: all var(--transition-base);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .achievement-card::before {
@@ -698,6 +707,8 @@ img {
   box-sizing: border-box;
   overflow-wrap: break-word;
   word-break: keep-all;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .testimonial-card:hover {
@@ -758,6 +769,8 @@ img {
   box-shadow: var(--shadow-card);
   display: flex;
   gap: var(--spacing-md);
+  overflow: visible;
+  touch-action: pan-y;
   transition: all var(--transition-base);
 }
 
@@ -1254,6 +1267,8 @@ img {
     padding: 0 var(--spacing-sm);
     max-width: 100%;
     width: 100%;
+    overflow-y: visible;
+    touch-action: pan-y;
   }
   
   .section {
@@ -1261,6 +1276,9 @@ img {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    overflow-y: visible;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
   
   .section-header {
