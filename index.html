@@ -10,6 +10,25 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header-container">
+      <nav class="header-nav">
+        <a href="#concept" class="nav-link">CONCEPT</a>
+        <a href="#target" class="nav-link">FOR YOU</a>
+        <a href="#benefits" class="nav-link">BENEFITS</a>
+        <a href="#schedule" class="nav-link">SCHEDULE</a>
+        <a href="#achievements" class="nav-link">TRACK RECORD</a>
+        <a href="#testimonials" class="nav-link">VOICES</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="header-buttons">
+        <a href="#" class="btn btn-header btn-header-primary" id="header-application-btn">申し込む</a>
+        <a href="#" class="btn btn-header btn-header-secondary" id="header-inquiry-btn">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
   <!-- ヒーローセクション -->
   <section class="hero">
     <div class="hero-overlay"></div>
@@ -27,7 +46,7 @@
   </section>
 
   <!-- 大テーマ・コンセプト -->
-  <section class="section concept">
+  <section id="concept" class="section concept">
     <div class="container">
       <div class="section-header">
         <span class="section-label">CONCEPT</span>
@@ -38,7 +57,7 @@
   </section>
 
   <!-- ターゲットユーザー -->
-  <section class="section target">
+  <section id="target" class="section target">
     <div class="container">
       <div class="section-header">
         <span class="section-label">FOR YOU</span>
@@ -80,7 +99,7 @@
   </section>
 
   <!-- 得られるもの（ベネフィット） -->
-  <section class="section benefits">
+  <section id="benefits" class="section benefits">
     <div class="container">
       <div class="section-header">
         <span class="section-label">BENEFITS</span>
@@ -107,7 +126,7 @@
   </section>
 
   <!-- 参加したらどんな毎日になるか（スケジュール） -->
-  <section class="section schedule">
+  <section id="schedule" class="section schedule">
     <div class="container">
       <h2 class="section-title">参加したらどんな毎日になるか</h2>
       <div class="schedule-timeline">
@@ -140,7 +159,7 @@
   </section>
 
   <!-- 実績・信頼性 -->
-  <section class="section achievements">
+  <section id="achievements" class="section achievements">
     <div class="container">
       <div class="section-header">
         <span class="section-label">TRACK RECORD</span>
@@ -169,7 +188,7 @@
   </section>
 
   <!-- お客様の声 -->
-  <section class="section testimonials">
+  <section id="testimonials" class="section testimonials">
     <div class="container">
       <div class="section-header">
         <span class="section-label">VOICES</span>
@@ -189,7 +208,7 @@
   </section>
 
   <!-- よくある質問（FAQ） -->
-  <section class="section faq">
+  <section id="faq" class="section faq">
     <div class="container">
       <div class="section-header">
         <span class="section-label">FAQ</span>
@@ -228,71 +247,21 @@
     </div>
   </section>
 
-  <!-- 料金 -->
-  <section class="section pricing">
+  <!-- CTAセクション -->
+  <section id="cta" class="section cta">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">PRICING</span>
-        <h2 class="section-title">料金について</h2>
-      </div>
-      <div class="pricing-content">
-        <p class="pricing-text">料金は時価となっております。<br>詳細については、お問い合わせフォームよりご連絡ください。</p>
-        <div class="pricing-form">
-          <h3 class="form-title">料金に関するお問い合わせ</h3>
-          <form class="contact-form" id="pricing-form">
-            <div class="form-group">
-              <label for="name">お名前</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">メールアドレス</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="message">お問い合わせ内容</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              <span>送信する</span>
-              <span class="btn-arrow">→</span>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 申し込みフォーム -->
-  <section class="section application">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">APPLICATION</span>
-        <h2 class="section-title">リトリートへのお申し込み</h2>
-      </div>
-      <div class="application-content">
-        <p class="application-text">心理学×リトリートで、あなたの人生を変える旅を始めましょう。</p>
-        <form class="contact-form" id="application-form">
-          <div class="form-group">
-            <label for="app-name">お名前</label>
-            <input type="text" id="app-name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="app-email">メールアドレス</label>
-            <input type="email" id="app-email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="app-phone">電話番号</label>
-            <input type="tel" id="app-phone" name="phone" required>
-          </div>
-          <div class="form-group">
-            <label for="app-message">ご希望やご質問など</label>
-            <textarea id="app-message" name="message" rows="5"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">
+      <div class="cta-content">
+        <h2 class="cta-title">あなたの人生を変える旅を始めましょう</h2>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary btn-cta" id="application-btn">
             <span>申し込む</span>
             <span class="btn-arrow">→</span>
-          </button>
-        </form>
+          </a>
+          <a href="#" class="btn btn-secondary btn-cta" id="inquiry-btn">
+            <span>お問い合わせ</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -320,22 +289,37 @@
 
     // アニメーション対象要素にクラスを追加
     document.addEventListener('DOMContentLoaded', () => {
-      const animateElements = document.querySelectorAll('.section > .container > *:not(.section-header), .target-card, .benefit-card, .schedule-item, .achievement-card, .testimonial-card, .faq-item');
+      const animateElements = document.querySelectorAll('.section > .container > *:not(.section-header), .target-card, .benefit-card, .schedule-item, .achievement-card, .testimonial-card, .faq-item, .cta-content');
       animateElements.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
       });
     });
 
-    // フォーム送信処理（実際の実装では適切なバックエンドに送信）
-    document.getElementById('pricing-form').addEventListener('submit', function(e) {
+    // CTAボタンのリンク設定（後で実際のURLに変更）
+    document.getElementById('application-btn').addEventListener('click', function(e) {
       e.preventDefault();
-      alert('お問い合わせありがとうございます。後日ご連絡いたします。');
+      // 後で実際の申し込みフォームのURLに変更
+      console.log('申し込みボタンがクリックされました');
     });
 
-    document.getElementById('application-form').addEventListener('submit', function(e) {
+    document.getElementById('inquiry-btn').addEventListener('click', function(e) {
       e.preventDefault();
-      alert('お申し込みありがとうございます。後日ご連絡いたします。');
+      // 後で実際のお問い合わせフォームのURLに変更
+      console.log('お問い合わせボタンがクリックされました');
+    });
+
+    // ヘッダーボタンのリンク設定
+    document.getElementById('header-application-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      // 後で実際の申し込みフォームのURLに変更
+      console.log('ヘッダー申し込みボタンがクリックされました');
+    });
+
+    document.getElementById('header-inquiry-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      // 後で実際のお問い合わせフォームのURLに変更
+      console.log('ヘッダーお問い合わせボタンがクリックされました');
     });
   </script>
 </body>
