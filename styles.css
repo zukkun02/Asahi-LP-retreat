@@ -73,10 +73,19 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -89,6 +98,9 @@ body {
   word-break: keep-all;
   overflow-wrap: break-word;
   -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 /* ========================================
@@ -143,6 +155,8 @@ a:hover {
   max-width: var(--container-wide);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* ========================================
@@ -151,6 +165,9 @@ a:hover {
 .section {
   padding: var(--spacing-section) 0;
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .section-header {
@@ -372,6 +389,12 @@ a:hover {
   object-fit: contain;
   transition: transform var(--transition-base);
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .target-card:hover .target-icon {
@@ -644,6 +667,8 @@ a:hover {
   gap: var(--spacing-xl);
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .testimonial-card {
@@ -654,6 +679,11 @@ a:hover {
   box-shadow: var(--shadow-card);
   position: relative;
   transition: all var(--transition-base);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 .testimonial-card:hover {
@@ -1000,11 +1030,16 @@ a:hover {
   .testimonials-grid,
   .achievements-grid {
     grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
   
   .schedule-item {
     grid-template-columns: 1fr;
     padding-left: var(--spacing-xl);
+    width: 100%;
+    max-width: 100%;
   }
   
   .schedule-time {
@@ -1013,11 +1048,15 @@ a:hover {
   
   .hero {
     min-height: 80vh;
+    width: 100%;
+    max-width: 100%;
   }
   
   .faq-item {
     flex-direction: column;
     gap: var(--spacing-sm);
+    width: 100%;
+    max-width: 100%;
   }
   
   .faq-icon {
@@ -1033,10 +1072,15 @@ a:hover {
 @media (max-width: 640px) {
   .container {
     padding: 0 var(--spacing-sm);
+    max-width: 100%;
+    width: 100%;
   }
   
   .section {
     padding: var(--spacing-lg) 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   .section-header {
@@ -1046,16 +1090,21 @@ a:hover {
   .hero {
     padding: var(--spacing-lg) var(--spacing-sm);
     min-height: 70vh;
+    width: 100%;
+    max-width: 100%;
   }
   
   .hero-title {
     font-size: clamp(2rem, 8vw, 3.5rem);
     line-height: 1.5;
+    max-width: 100%;
+    word-break: keep-all;
   }
   
   .section-title {
     font-size: clamp(1.5rem, 5vw, 2rem);
     line-height: 1.4;
+    max-width: 100%;
   }
   
   .btn-primary {
@@ -1067,14 +1116,20 @@ a:hover {
   .testimonial-card,
   .achievement-card {
     padding: var(--spacing-lg);
+    width: 100%;
+    max-width: 100%;
   }
   
   .schedule-timeline {
     padding-left: var(--spacing-md);
+    width: 100%;
+    max-width: 100%;
   }
   
   .schedule-item {
     padding-left: var(--spacing-lg);
+    width: 100%;
+    max-width: 100%;
   }
   
   .target-card p,
@@ -1084,11 +1139,29 @@ a:hover {
   .faq-answer {
     font-size: clamp(0.9rem, 3vw, 1rem);
     line-height: 1.8;
+    max-width: 100%;
+    word-break: keep-all;
   }
   
   .section-text {
     font-size: clamp(0.95rem, 3.5vw, 1.125rem);
     line-height: 1.8;
+    max-width: 100%;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .target-grid,
+  .benefits-grid,
+  .achievements-grid {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
   }
   
   /* モバイルでのみ改行を表示 */
