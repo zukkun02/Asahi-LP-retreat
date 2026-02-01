@@ -355,10 +355,29 @@ a:hover {
   margin-bottom: var(--spacing-sm);
   opacity: 0.8;
   transition: transform var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.target-icon img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: transform var(--transition-base);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 .target-card:hover .target-icon {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.target-card:hover .target-icon img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(90, 122, 90, 0.2));
 }
 
 .target-card p {
