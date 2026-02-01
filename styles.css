@@ -84,10 +84,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-y: visible;
   width: 100%;
   max-width: 100%;
   scroll-padding-top: 50px;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -97,6 +100,7 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
+  overflow-y: visible;
   word-break: keep-all;
   overflow-wrap: break-word;
   -webkit-text-size-adjust: 100%;
@@ -104,6 +108,8 @@ body {
   max-width: 100%;
   position: relative;
   padding-top: 50px;
+  touch-action: pan-y;
+  overscroll-behavior-y: none;
 }
 
 /* ========================================
@@ -341,6 +347,8 @@ a:hover {
   gap: var(--spacing-lg);
   max-width: 1200px;
   margin: 0 auto;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .target-card {
@@ -448,6 +456,8 @@ img {
   gap: var(--spacing-xl);
   max-width: 1400px;
   margin: 0 auto;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .benefit-card {
@@ -523,6 +533,8 @@ img {
   margin: 0 auto;
   position: relative;
   padding-left: var(--spacing-lg);
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .schedule-timeline::before {
@@ -592,6 +604,8 @@ img {
   gap: var(--spacing-xl);
   max-width: 1000px;
   margin: 0 auto var(--spacing-xl);
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .achievement-card {
@@ -692,6 +706,8 @@ img {
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 .testimonial-card {
