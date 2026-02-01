@@ -382,13 +382,15 @@ a:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: auto;
+  height: 140px;
+  min-height: 140px;
 }
 
 .target-icon img {
   width: 100%;
   max-width: 210px;
-  height: auto;
+  height: 100%;
+  max-height: 140px;
   object-fit: contain;
   transition: transform var(--transition-base);
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
@@ -398,6 +400,15 @@ a:hover {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+/* 画像のCLS防止 */
+.target-icon img,
+.benefit-card img,
+.testimonial-card img,
+.achievement-card img {
+  display: block;
 }
 
 .target-card:hover .target-icon {
@@ -1356,6 +1367,15 @@ img {
     min-width: 0;
     width: 100%;
     max-width: 100%;
+  }
+  
+  .target-icon {
+    height: 120px;
+    min-height: 120px;
+  }
+  
+  .target-icon img {
+    max-height: 120px;
   }
   
   .header-container {

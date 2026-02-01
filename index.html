@@ -291,6 +291,31 @@
   </footer>
 
   <script>
+    // スクロール位置復元を無効化
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // ページロード/リロード時にトップに戻す（ハッシュがある場合は除く）
+    function scrollToTopOnLoad() {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    // pageshow イベント（バック/フォワードナビゲーション含む）
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted || performance.navigation.type === 1) {
+        // ページがキャッシュから復元された、またはリロードされた場合
+        scrollToTopOnLoad();
+      }
+    });
+
+    // load イベント
+    window.addEventListener('load', function() {
+      scrollToTopOnLoad();
+    });
+
     // スクロールアニメーション
     const observerOptions = {
       threshold: 0.1,
