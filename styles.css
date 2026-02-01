@@ -364,7 +364,7 @@ a:hover {
 
 .target-icon img {
   width: 100%;
-  max-width: 120px;
+  max-width: 210px;
   height: auto;
   object-fit: contain;
   transition: transform var(--transition-base);
