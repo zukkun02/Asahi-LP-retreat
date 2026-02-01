@@ -701,6 +701,8 @@ img {
   top: var(--spacing-md);
   left: var(--spacing-md);
   line-height: 1;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .testimonial-text {
@@ -712,8 +714,12 @@ img {
   position: relative;
   z-index: 1;
   padding-top: var(--spacing-md);
+  padding-left: var(--spacing-sm);
   word-break: keep-all;
   overflow-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* ========================================
@@ -1154,6 +1160,31 @@ img {
     min-width: 0;
     width: 100%;
     max-width: 100%;
+    gap: var(--spacing-md);
+  }
+  
+  .testimonial-card {
+    padding: var(--spacing-md);
+    min-width: 0;
+    overflow: visible;
+  }
+  
+  .testimonial-quote {
+    font-size: 3rem;
+    top: var(--spacing-xs);
+    left: var(--spacing-xs);
+  }
+  
+  .testimonial-text {
+    font-size: clamp(0.95rem, 3.5vw, 1.125rem);
+    line-height: 1.8;
+    padding-top: var(--spacing-sm);
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: keep-all;
   }
   
   .target-grid,
