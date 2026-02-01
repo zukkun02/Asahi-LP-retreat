@@ -86,6 +86,9 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* ========================================
@@ -97,6 +100,8 @@ h1, h2, h3 {
   font-weight: 600;
   color: var(--color-text);
   letter-spacing: var(--letter-spacing-wide);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 h1 {
@@ -116,6 +121,8 @@ h3 {
 
 p {
   margin-bottom: var(--spacing-sm);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -170,6 +177,9 @@ a:hover {
   text-align: center;
   margin-bottom: var(--spacing-lg);
   position: relative;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
 .section-text {
@@ -179,6 +189,8 @@ a:hover {
   color: var(--color-text-light);
   font-size: var(--font-size-lg);
   line-height: 1.9;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ========================================
@@ -249,23 +261,14 @@ a:hover {
   margin-bottom: var(--spacing-md);
   color: var(--color-text);
   font-weight: 700;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
-
-.hero-title-line {
-  display: block;
-  margin-bottom: 0.3em;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.hero-title-line:nth-child(1) { animation-delay: 0.2s; }
-.hero-title-line:nth-child(2) { animation-delay: 0.4s; }
-.hero-title-line:nth-child(3) { animation-delay: 0.6s; }
-.hero-title-line:nth-child(4) { animation-delay: 0.8s; }
 
 .hero-title-accent {
   color: var(--color-accent);
-  position: relative;
 }
 
 .hero-subtitle {
@@ -385,6 +388,8 @@ a:hover {
   color: var(--color-text);
   font-size: var(--font-size-base);
   line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ========================================
@@ -463,6 +468,8 @@ a:hover {
   position: relative;
   z-index: 1;
   line-height: 1.9;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ========================================
@@ -675,6 +682,8 @@ a:hover {
   position: relative;
   z-index: 1;
   padding-top: var(--spacing-md);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ========================================
@@ -731,12 +740,16 @@ a:hover {
   color: var(--color-accent);
   margin-bottom: var(--spacing-sm);
   font-size: var(--font-size-lg);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .faq-answer {
   color: var(--color-text-light);
   margin: 0;
   line-height: 1.8;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ========================================
@@ -1035,6 +1048,16 @@ a:hover {
     min-height: 70vh;
   }
   
+  .hero-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1.4;
+  }
+  
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    line-height: 1.4;
+  }
+  
   .btn-primary {
     width: 100%;
     min-width: auto;
@@ -1052,5 +1075,31 @@ a:hover {
   
   .schedule-item {
     padding-left: var(--spacing-lg);
+  }
+  
+  .target-card p,
+  .benefit-text,
+  .testimonial-text,
+  .faq-question,
+  .faq-answer {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    line-height: 1.8;
+  }
+  
+  .section-text {
+    font-size: clamp(0.95rem, 3.5vw, 1.125rem);
+    line-height: 1.8;
+  }
+  
+  /* モバイルでのみ改行を表示 */
+  .mobile-br {
+    display: block;
+  }
+}
+
+/* デスクトップでは改行を非表示 */
+@media (min-width: 641px) {
+  .mobile-br {
+    display: none;
   }
 }
