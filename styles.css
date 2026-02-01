@@ -894,6 +894,93 @@ img {
   border-color: white;
 }
 
+/* ハンバーガーメニュー */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all var(--transition-base);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* モバイルメニューオーバーレイ */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 280px;
+  height: calc(100vh - 50px);
+  background: white;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform var(--transition-base);
+  padding: var(--spacing-lg);
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.mobile-menu-overlay.active .mobile-menu {
+  transform: translateX(0);
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background var(--transition-fast);
+  font-family: var(--font-sans);
+}
+
+.mobile-nav-link:hover {
+  background: var(--color-bg-alt);
+  color: var(--color-accent);
+}
+
 /* スクロール時のオフセット調整 */
 html {
   scroll-padding-top: 50px;
@@ -1272,23 +1359,19 @@ html {
     gap: var(--spacing-sm);
   }
   
-  .header-nav {
-    gap: var(--spacing-sm);
-    font-size: 0.75rem;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    flex: 1;
+  .hamburger-menu {
+    display: flex;
+    order: 1;
   }
   
-  .header-nav::-webkit-scrollbar {
+  .header-nav {
     display: none;
   }
   
   .header-buttons {
     flex-shrink: 0;
     gap: 0.375rem;
+    order: 3;
   }
   
   .btn-header {
@@ -1296,6 +1379,14 @@ html {
     font-size: 0.65rem;
     max-width: 80px;
     height: 26px;
+  }
+  
+  .mobile-menu-overlay {
+    top: 50px;
+  }
+  
+  .mobile-menu {
+    top: 50px;
   }
   
   .cta-content {

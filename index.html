@@ -13,7 +13,12 @@
   <!-- ヘッダー -->
   <header class="header">
     <div class="header-container">
-      <nav class="header-nav">
+      <button class="hamburger-menu" id="hamburger-menu" aria-label="メニュー">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="header-nav" id="header-nav">
         <a href="#concept" class="nav-link">CONCEPT</a>
         <a href="#target" class="nav-link">FOR YOU</a>
         <a href="#benefits" class="nav-link">BENEFITS</a>
@@ -28,6 +33,19 @@
       </div>
     </div>
   </header>
+  
+  <!-- モバイルメニューオーバーレイ -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <nav class="mobile-menu">
+      <a href="#concept" class="mobile-nav-link">CONCEPT</a>
+      <a href="#target" class="mobile-nav-link">FOR YOU</a>
+      <a href="#benefits" class="mobile-nav-link">BENEFITS</a>
+      <a href="#schedule" class="mobile-nav-link">SCHEDULE</a>
+      <a href="#achievements" class="mobile-nav-link">TRACK RECORD</a>
+      <a href="#testimonials" class="mobile-nav-link">VOICES</a>
+      <a href="#faq" class="mobile-nav-link">FAQ</a>
+    </nav>
+  </div>
 
   <!-- ヒーローセクション -->
   <section class="hero">
@@ -320,6 +338,35 @@
       e.preventDefault();
       // 後で実際のお問い合わせフォームのURLに変更
       console.log('ヘッダーお問い合わせボタンがクリックされました');
+    });
+
+    // ハンバーガーメニューの開閉
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    hamburgerMenu.addEventListener('click', function() {
+      hamburgerMenu.classList.toggle('active');
+      mobileMenuOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // モバイルメニューのリンクをクリックしたら閉じる
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburgerMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // オーバーレイをクリックしたら閉じる
+    mobileMenuOverlay.addEventListener('click', function(e) {
+      if (e.target === mobileMenuOverlay) {
+        hamburgerMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>
