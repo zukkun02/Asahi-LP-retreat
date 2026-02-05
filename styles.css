@@ -456,12 +456,14 @@ img {
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-xl);
   max-width: 1400px;
   margin: 0 auto;
   overflow: visible;
   touch-action: pan-y;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .benefit-card {
@@ -474,6 +476,9 @@ img {
   transition: all var(--transition-base);
   overflow: visible;
   touch-action: pan-y;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .benefit-card::after {
@@ -517,6 +522,9 @@ img {
   position: relative;
   z-index: 1;
   font-size: var(--font-size-h3);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .benefit-text {
@@ -1330,7 +1338,6 @@ img {
     min-width: auto;
   }
   
-  .benefit-card,
   .testimonial-card,
   .achievement-card {
     padding: var(--spacing-lg);
@@ -1402,9 +1409,44 @@ img {
   .target-grid,
   .benefits-grid,
   .achievements-grid {
+    grid-template-columns: 1fr;
     min-width: 0;
     width: 100%;
     max-width: 100%;
+    gap: var(--spacing-md);
+    padding: 0;
+  }
+  
+  .benefit-card {
+    padding: var(--spacing-md);
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .benefit-number {
+    font-size: clamp(2rem, 8vw, 3rem);
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+  
+  .benefit-title {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+    max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  
+  .benefit-text {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    line-height: 1.8;
+    max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    padding: 0;
   }
   
   .target-icon {
